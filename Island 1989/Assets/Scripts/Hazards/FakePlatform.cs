@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FakePlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //The Faker
+    [SerializeField] private GameObject fakePlatform;
 
-    // Update is called once per frame
-    void Update()
+    //If the player steps on the fake platform, it is set to false
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.collider.tag == "Player")
+        {
+            fakePlatform.SetActive(false);
+        }
     }
 }

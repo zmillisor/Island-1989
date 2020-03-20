@@ -36,9 +36,9 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         //If the player presses space, and is grounded, they will jump
-        if(Input.GetButton("Jump") && isGrounded == true)
+        if(Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 12f, 0f), ForceMode.Impulse);
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 100f, 0f), ForceMode.Impulse);
         }
     }
 
