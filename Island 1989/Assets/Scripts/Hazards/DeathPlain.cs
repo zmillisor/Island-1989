@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class DeathPlain : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //The players spawn point
+    [SerializeField] private Transform playerSpawn;
 
-    // Update is called once per frame
-    void Update()
+    //The player
+    [SerializeField] private Transform player;
+
+    //If the player collides with the death plain, they will respawn at the spawn point
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.collider.tag == "Player")
+        {
+            player.transform.position = playerSpawn.transform.position;
+        }
     }
 }
